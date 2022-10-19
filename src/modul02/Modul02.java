@@ -27,8 +27,8 @@ public class Modul02 {
 				System.out.println("-------------------------");
 				System.out.println("Karyawan PT. XYZ ABC Jaya");
 				System.out.println("-------------------------");
-				for (Karyawan karyawan2 : listKaryawan) {
-					System.out.println(karyawan2);
+				for (Karyawan k : listKaryawan) {
+					System.out.println(k.getNik() + " - " + k.getNama() + " - Rp " + k.hitungGaji());
 				}
 			} else {
 				System.out.println("Daftar karyawan kosong.");

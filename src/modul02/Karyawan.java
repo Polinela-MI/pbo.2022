@@ -29,4 +29,14 @@ public class Karyawan {
 	public void setGaji(int gaji) {
 		this.gaji = gaji;
 	}
+	public int hitungGaji() {
+		int tunjKinerja =  (int)(gaji * 0.1);
+		int tunjTransport = (int)(gaji * 0.05);
+		
+		int subTotal = gaji + tunjKinerja + tunjTransport;
+		
+		int pajak = (int) (subTotal * 0.025);
+		
+		return subTotal - pajak;
+	}
 }
