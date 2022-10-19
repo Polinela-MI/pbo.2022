@@ -1,10 +1,10 @@
-package modul04;
+package modul05;
 
 public class KaryawanPenuhWaktu extends Karyawan{
 	int totalJamKerja;
 	
-	public KaryawanPenuhWaktu(int nik, String namaLengkap, int gajiPokok, int totalJamKerja) {
-		super(nik, namaLengkap, gajiPokok);
+	public KaryawanPenuhWaktu(String namaLengkap, int gajiPokok, int totalJamKerja) {
+		super(namaLengkap, gajiPokok);
 		this.totalJamKerja = totalJamKerja;
 	}
 
@@ -36,4 +36,5 @@ public class KaryawanPenuhWaktu extends Karyawan{
 		
 		return (int)(subTotal - getGajiPokok());
 	}
+
 }

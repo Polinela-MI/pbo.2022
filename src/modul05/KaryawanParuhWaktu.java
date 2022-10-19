@@ -1,10 +1,10 @@
-package modul04;
+package modul05;
 
-public class KaryawanPenuhWaktu extends Karyawan{
+public class KaryawanParuhWaktu extends Karyawan{
 	int totalJamKerja;
-	
-	public KaryawanPenuhWaktu(int nik, String namaLengkap, int gajiPokok, int totalJamKerja) {
-		super(nik, namaLengkap, gajiPokok);
+
+	public KaryawanParuhWaktu(String namaLengkap, int gajiPokok, int totalJamKerja) {
+		super(namaLengkap, gajiPokok);
 		this.totalJamKerja = totalJamKerja;
 	}
 
@@ -18,22 +18,23 @@ public class KaryawanPenuhWaktu extends Karyawan{
 
 	@Override
 	public double hitungGaji() {
-		int HOURS_WORKED = 40;
-		int OVERTIME_PAY = 5000;
+		int HOURS_WORKED = 20;
+		int OVERTIME_PAY = 2000;
 		int selisih = totalJamKerja - HOURS_WORKED;
 		
 		int weeklyPay = getGajiPokok() * HOURS_WORKED;
 		setTunjanganTransport(weeklyPay * 0.05);
+		
 		int selisihGaji;
 		if(selisih < 0) {
-			selisihGaji = selisih * getGajiPokok();
+			setMisc(selisih * getGajiPokok());
 		} else {
-			selisihGaji = selisih * (getGajiPokok() + OVERTIME_PAY);
+			setMisc(selisih * (getGajiPokok() + OVERTIME_PAY));
 		}
 		
-		double subTotal = weeklyPay + getTunjanganTransport() + selisihGaji;
+		double subTotal = weeklyPay + getTunjanganTransport() + getMisc();
 		setPajak(subTotal * 0.025);
 		
-		return (int)(subTotal - getGajiPokok());
+		return (int)(subTotal - getPajak());
 	}
 }
