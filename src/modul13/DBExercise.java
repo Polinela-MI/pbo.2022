@@ -20,9 +20,9 @@ public class DBExercise {
         try{
             while((line = buff.readLine()) != null){
                 if(line.startsWith("todo")){
-                    saveTodo();
+                    saveTodo(line.substring(5));
                 } else if(line.startsWith("done")){
-                    checkTodo();
+                    checkTodo(line.substring(5));
                 } else if(line.startsWith("list")){
                     listTodo();
                 } else if(line.startsWith("quit")){
@@ -39,11 +39,11 @@ public class DBExercise {
 
     }
 
-    public static void saveTodo(){
+    public static void saveTodo(String item){
         System.out.println("savetodo");
     }
 
-    public static void checkTodo(){
+    public static void checkTodo(String item){
         System.out.println("checktodo");
     }
 
