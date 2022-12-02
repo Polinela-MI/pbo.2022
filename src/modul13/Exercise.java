@@ -1,26 +1,25 @@
 package modul13;
 
+import java.math.BigDecimal;
 import java.sql.*;
 
 public class Exercise {
     public static void main(String[] args) {
-        String URL = "jdbc:mysql://localhost:3306/mydb";
+        String URL = "jdbc:mysql://192.168.9.35:3306/a1";
 
-        try(Connection con = DriverManager.getConnection(URL, "root", "")){
-            String sql = "select * from cobacoba";
+        try(Connection con = DriverManager.getConnection(URL, "hack", "nurul21")){
+//            String sql = "select * from user";
+//
+//            PreparedStatement stmt = con.prepareStatement(sql);
+//
+//
+//            ResultSet rs = stmt.executeQuery();
+//
+//            while(rs.next()){
+//                System.out.println(rs.getString("username"));
+//            }
 
-            Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            ResultSet hasil = stmt.executeQuery(sql);
-
-            hasil.last();
-            System.out.println(hasil.getInt("id") + " " + hasil.getString("text"));
-            System.out.println(hasil.getRow());
-
-            hasil.first();
-            System.out.println(hasil.getInt("id") + " " + hasil.getString("text"));
-
-            hasil.close();
-            stmt.close();
+//            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

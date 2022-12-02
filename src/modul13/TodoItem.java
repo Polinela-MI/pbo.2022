@@ -42,4 +42,8 @@ public class TodoItem {
     public void setState(boolean state) {
         this.state = state;
     }
+
+    public String toString(){
+        return id.substring(0, 5) + " - " + item;
+    }
 }
