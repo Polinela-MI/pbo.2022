@@ -1,0 +1,24 @@
+membuat database:
+create database grouppbo2;
+
+membuat table user:
+CREATE TABLE user (
+    id VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(10) NOT NULL,
+    PRIMARY KEY(id),
+    UNIQUE(username)
+)
+
+membuat table appointment:
+CREATE TABLE appointments (
+    id VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    starttime TIMESTAMP,
+    endtime TIMESTAMP,
+    state BOOLEAN NOT NULL DEFAULT=false,
+    createdby VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+)
